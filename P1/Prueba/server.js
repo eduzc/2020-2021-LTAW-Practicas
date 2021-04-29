@@ -13,10 +13,27 @@ const mime = {
 //-- se imprime un mensaje en la consola
 http.createServer((req, res) => {
   console.log("----------> Peticion recibida")
-  console.log("Recurso solicitado (URL): " + req.url)
   var q = url.parse(req.url, true);
+  console.log("Recurso solicitado (URL): " + req.url)
   console.log("Recurso:" + q.pathname)
 
-  var filename = "." + q.pathname;
+  var filename = "";
 
-  
+  //-- Obtener fichero a devolver
+  if (q.pathname == "/")
+    filename += "index.html"
+  else {
+    filename = q.pathname;
+  }
+
+  //-- Leer fichero
+  fs.readFile(filename, function(error, data) {
+
+    //-- Mensaje de error
+    if (error) {
+      res.writeHead(404, {'Content-Type': 'text/html'});
+      res.write("Error 404 Not Found");
+      return res.end();
+    }else{
+
+   
