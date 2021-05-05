@@ -83,3 +83,52 @@ const server = http.createServer((req, res)=>{
 server.listen(PUERTO);
 
 console.log("Ejemplo 7. Escuchando en puerto: " + PUERTO);
+
+
+
+
+
+
+const http = require('http');
+const url = require('url');
+const fs = require('fs');
+const PUERTO = 9000;
+
+const mime = {
+    'html' : 'text/html',
+    'css'  : 'text/css',
+    'jpg'  : 'image/jpg',
+    'png'  : 'image/png',
+   };
+
+http.createServer((req, res) => {
+    console.log("----------> Peticion recibida")
+    console.log("Recurso solicitado (URL): " + req.url)
+    var q = url.parse(req.url, true);
+    console.log("Recurso:" + q.pathname)
+
+    var filename = "." + q.pathname;
+
+    // Fichero a devolver
+    if (q.pathname == "/")
+    filename += "index.html"
+    // Lectura de fichero
+    fs.readFile(filename, function(error, data) {
+        // Mensaje de Error
+        if (error) {
+            res.writeHead(404, {'Content-Type': 'text/html'});
+            res.write("Error 404 Not Found");
+            return res.end();
+        
+
+        // Mensaje de Respuesta
+        }else{
+            res.writeHead(200, {'Content-Type': mime});
+            res.write(data);
+            return res.end();
+        };
+        
+    }).listen(PUERTO);
+
+    console.log("Servidor corriendo...")
+    console.log("Puerto: " + PUERTO)   
