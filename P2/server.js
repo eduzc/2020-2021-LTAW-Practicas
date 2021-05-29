@@ -8,7 +8,7 @@ const mime = {
   'css'  : 'text/css',
   'jpg'  : 'image/jpg',
   'png'  : 'image/png',
-  'mp4'  :  'video/mp4',
+  
  };
 
 //-- Configurar y lanzar el servidor. Por cada peticion recibida
