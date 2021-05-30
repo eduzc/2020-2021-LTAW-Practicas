@@ -4,7 +4,7 @@ const url = require('url');
 const fs = require('fs');
  
 //-- Puerto donde recibir las peticiones
-const PUERTO = 9000;
+const PUERTO = 8080;
  
 //-- Array con los productos disponibles en la tienda
 //-- Usamos un array, pero podría ser un objeto genérico

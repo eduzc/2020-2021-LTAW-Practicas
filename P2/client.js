@@ -8,7 +8,7 @@ const email = document.getElementById('email')
  
 vercarrito.onclick = () => {
   const m = new XMLHttpRequest();
-  m.open("GET", "http://localhost:9000/action.carrito?email=" + email.value, true)
+  m.open("GET", "http://localhost:8080/action.carrito?email=" + email.value, true)
   m.onreadystatechange=function(){
    //-- Petición enviada y recibida. Todo OK!
    if (m.readyState==4 && m.status==200){

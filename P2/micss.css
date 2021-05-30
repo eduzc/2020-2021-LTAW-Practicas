@@ -1,0 +1,92 @@
+body{
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+img{
+  padding: 10px;
+  max-width: 160%;
+  height: auto;
+  float: center;
+}
+
+footer{
+  padding: 50px;
+  text-align: center;
+  width: auto;
+}
+
+.header{
+  padding: 20px;
+  text-align: center;
+}
+
+.carrito{
+  height: 40px;
+}
+
+.datoscompra{
+  margin-left: 100px;
+  height: 250px;
+}
+
+.metodopago{
+  margin-left: 100px;
+  height: 200px;
+}
+
+.registro{
+  margin-left: 200px;
+  padding: 50px;
+  height: 100px;
+}
+
+button{
+  text-decoration: none;
+  font-weight: 20;
+  font-size: 20px;
+  color: black;
+  background-color: beige;
+  border-radius: 6px;
+  border: 1px solid black;
+  font-family: helvetica;
+  font-style: italic;
+  float: center;
+}
+
+button:hover{
+      background-color: brown;
+      color: beige;
+ }
+
+.container{
+  height: 400px;
+  width: 100%;
+
+ }
+
+ h1{
+   color: black;
+   text-align: center;
+   font-family: serif;
+   font-size: 50px;
+ }
+
+ h2{
+   color: black;
+   text-align: center;
+   font-family: courier;
+   font-size: 20px;
+ }
+
+ h6{
+   text-align: center;
+   font-family: courier;
+   font-size: 15px;
+ }
+
+ p{
+   text-align: center;
+   font-family: courier;
+   font-size: 15px;
+ }

@@ -10,7 +10,7 @@ function main() {
     const send = document.getElementById("send");
     const socket = io();
    
-    // Notificación de conexión de clientes
+    // Notificación de conexión de clientes por nombre de usuario
     socket.emit('new_client', username);
     console.log("El usuario " + username + " se ha conectado");
    
