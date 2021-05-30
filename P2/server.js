@@ -119,7 +119,7 @@ http.createServer((req, res) => {
             //-- Fichero no encontrado. Devolver mensaje de error
             if (err) {
               res.writeHead(404, {'Content-Type': 'text/html'});
-              return res.end("404 Not Found");
+              return res.end("ERROR 404 Not Found");
             }
  
             //-- Generar el mensaje de respuesta
