@@ -34,7 +34,9 @@ io.on('connection', function(socket){
  
   //  Detección de usuario nuevo
   socket.on('new_client', username =>{
+      // Notificación de que un usuario se ha conectado
       io.emit('new_message',"El usuario " + username + " se ha conectado!! ");
+     //  Notificamos en consola el usuario conectado  
       console.log("Client: " + username + " connected.")
       socket.emit('hello', "Tu nick es: " + username );
  
@@ -80,8 +82,11 @@ io.on('connection', function(socket){
       }
     });
     // Desconexión de usuario
+
     socket.on('disconnect', function(){
       io.emit('new_message',"El usuario " + username + " se ha desconectado!! ");
+    
+    // Notificación por consola
       console.log("El usuario " + username + ' se ha desconectado');
       n_usuarios -= 1;
     });
