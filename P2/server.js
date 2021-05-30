@@ -14,9 +14,9 @@ const PUERTO = 8080;
 let productos = {
   "Eléctricas": ["GUIT ARCH", "GUIT GIBSON", "GUIT SG", "GUIT FENDER"],
   "Bajos": ["FENDER 70s", "JACKSON CBX", "LAKLAND SKYLINE", "FENDER 75"],
-  "Acústicas": ["LAGARTA", "LA LOBA"],
-  "Cabezales": [""],
-  "Pantallas": [""],
+  "Acústicas": ["GIBSON ACOUSTIC", "TAYLOR ACOUSTIC", "HB ACOUSTIC"],
+  "Cabezales": ["CABEZAL ORANGE", "CABEZAL MARSHALL", "CABEZAL RECTIFIER","CABEZAL EVH" ],
+  "Pantallas": ["CAB 1", "CAB 2", "CAB 3", "CAB 4"],
 };
  
 const datos = {
