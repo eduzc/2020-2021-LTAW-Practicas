@@ -26,5 +26,6 @@ Mensaje.onchange = () => {
   if (Mensaje.value) {
     my_socket.send(time + nick + ": " + Mensaje.value);
   }
+  Mensaje.value = "";
 };
-
+ 
