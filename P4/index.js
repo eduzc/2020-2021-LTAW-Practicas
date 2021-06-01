@@ -1,9 +1,11 @@
+//Proceso de renderizado
 
 const electron = require('electron');
 
 
 console.log("Hola desde el index.js!!");
 
+//Obtenemos elementos de la interfaz
 const btn_test = document.getElementById("btn_test");
 const display = document.getElementById("display");
 const node_v = document.getElementById("node_v");
@@ -25,6 +27,16 @@ btn_test.onclick = () => {
     console.log("Botón apretado!");
 
 };
+
+electron.ipcRenderer.on('ip', (event, message) => {
+    console.log("Dirección ip: " + message);
+    direccion_ip.innerHTML = message;
+});
+
+electron.ipcRenderer.on('info_n_usuarios', (event, message) => {
+    console.log("Usuarios: " + message);
+    info_n_usuarios.innerHTML = message;
+});
 
 
 
