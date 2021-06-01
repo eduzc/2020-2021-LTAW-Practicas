@@ -9,9 +9,9 @@ const process = require('process');
 let n_usuarios = 0;
 const app = express();
 const server = http.Server(app);
-// Definimos el puerto 
+// Definimos el puerto y la IP
 const PUERTO = 8080;
-let end_address =  '/michat/index.html'
+let end_address =  "/chat.html"
 let address = 'http://' + ip.address()+ ':'+ PUERTO + end_address;
 console.log(address)
 let win = null;
@@ -28,16 +28,49 @@ var disconnect = 'disconnect';
 var connect = 'connect';
 
 
+// Electron
+electron.app.on('ready', () => {
+    console.log("Evento Ready!");
+
+    //creamos ventana principal de la app
+    win = new electron.BrowserWindow({
+        widht: 660, // Anchura
+        height: 500, // Altura
+
+        //permitimos que la ventana tenga acceso al sisitema
+        webPreferences: {
+            nodeIntegration: true, 
+            contextIsolation: false
+        }
+    });
+
+    win.loadFile("index.html");
+    win.on('ready-to-show', () => {
+        win.webContents.send('ip', address);
+        console.log("Dirección URL: " + address);
+    });
+});
+electron.ipcMain.handle('test', (event,msg) => {
+    console.log(">> Mensaje: " + msg);
+    io.send(msg);
+});
 
 const io = socket(server); 
 // Escuchamos en el puerto 
 server.listen(PUERTO);
 console.log("Escuchando en el puerto: " + PUERTO);
-//------- PUNTOS DE ENTRADA A LA APP WEB
 app.get('/', (req, res) => {
     path = __dirname + public_chat;
     res.sendFile(path);
 });
+
+
+
+
+
+
+
+
 
 
 
