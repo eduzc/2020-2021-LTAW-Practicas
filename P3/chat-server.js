@@ -84,7 +84,13 @@ io.on('connection', function(socket){
           io.emit('new_message', time + username +': ' + msg);
       }
     });
+    // Desconexión de usuario
+
+    socket.on('disconnect', function(){
+      io.emit('new_message',"El usuario " + username + " se ha desconectado!! ");
     
+
+    });
   });
 });
  
