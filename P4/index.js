@@ -38,5 +38,16 @@ electron.ipcRenderer.on('ip', (event, message) => {
     direccion_ip.innerHTML = message;
 });
 
+//Número de usuarios
+electron.ipcRenderer.on('info_n_usuarios', (event, message) => {
+    console.log("Usuarios: " + message);
+    info_n_usuarios.innerHTML = message;
+});
 
+//Mensaje recibido de un cliente
+electron.ipcRenderer.on('print', (event, message) => {
+    console.log("Mensaje: " + message);
+    display.innerHTML += '<p>' + message + "</p>";
+    print.textContent = message;
+});
 
