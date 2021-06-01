@@ -17,7 +17,7 @@ console.log(address)
 let win = null;
 let direccion_ip = ip.address();
 console.log("IP de la máquina: " + direccion_ip);
-let public_chat = '/public/chat.html';
+let public_chat = '/cliente/chat.html';
 // Definimos los mensajes de notificación
 var nueva_conexion = ("CHUCK NORRIS TE SALUDA");
 var desconexion = ("UN USUARIO SE HA DESCONECTADO");
@@ -67,7 +67,7 @@ app.get('/', (req, res) => {
 
 app.use('/', express.static(__dirname + '/'));
 
-app.use(express.static('public'));
+app.use(express.static('cliente'));
 
 io.on (connect, (socket) => {
     console.log (nueva_conexion.blue);
@@ -86,7 +86,7 @@ io.on (connect, (socket) => {
         win.webContents.send('info_n_usuarios', n_usuarios);
     });
 
-// Definición de comandos de CHUCK NORRIS
+    // Definición de comandos de CHUCK NORRIS
     socket.on("message", (msg) => {
         if (msg.split(': ')[1].startsWith('/')) {
             switch (msg.split(': ')[1]) {
@@ -114,7 +114,7 @@ io.on (connect, (socket) => {
                     io.emit('message', msg);
                     break;
                 default:
-
+                    
                     break;
             }
         } else {

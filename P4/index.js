@@ -1,11 +1,6 @@
-//Proceso de renderizado
 
 const electron = require('electron');
 
-
-console.log("Hola desde el index.js!!");
-
-//Obtenemos elementos de la interfaz
 const btn_test = document.getElementById("btn_test");
 const display = document.getElementById("display");
 const node_v = document.getElementById("node_v");
@@ -28,19 +23,19 @@ btn_test.onclick = () => {
 
 };
 
-electron.ipcRenderer.on('ip', (event, message) => {
-    console.log("Dirección ip: " + message);
-    direccion_ip.innerHTML = message;
+electron.ipcRenderer.on('ip', (event, msg) => {
+    console.log("Dirección ip: " + msg);
+    direccion_ip.innerHTML = msg;
 });
 
-electron.ipcRenderer.on('info_n_usuarios', (event, message) => {
-    console.log("Usuarios: " + message);
-    info_n_usuarios.innerHTML = message;
+electron.ipcRenderer.on('info_n_usuarios', (event, msg) => {
+    console.log("Usuarios: " + msg);
+    info_n_usuarios.innerHTML = msg;
 });
 
-electron.ipcRenderer.on('print', (event, message) => {
-    console.log("Mensaje: " + message);
-    display.innerHTML += '<p>' + message + "</p>";
-    print.textContent = message;
+electron.ipcRenderer.on('print', (event, msg) => {
+    console.log("Mensaje: " + msg);
+    display.innerHTML += '<p>' + msg + "</p>";
+    print.textContent = msg;
 });
 
