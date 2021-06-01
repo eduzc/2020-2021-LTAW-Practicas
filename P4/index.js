@@ -23,3 +23,20 @@ electron_v.textContent = process.versions.electron;
 let n_usuarios = 0;
 info_n_usuarios.innerHTML = n_usuarios;
 
+//Mensajes enviados al main
+btn_test.onclick = () => {
+    //Escribimos en el display un mensaje para todos los usuarios
+    display.innerHTML +=  "PROBANDO" + '</p>';
+    console.log("Botón apretado!");
+
+    //Enviamos mensaje al main
+};
+
+//ip
+electron.ipcRenderer.on('ip', (event, message) => {
+    console.log("Dirección ip: " + message);
+    direccion_ip.innerHTML = message;
+});
+
+
+
