@@ -10,6 +10,20 @@
   <script src="/socket.io/socket.io.js"></script>
   <script src="cliente.js" defer></script>
 </head>
-
-
+<body onload="main();">
+  <div id = "chat">
+    
+    <h1><center>MI CHAT</center></h1>
+    <br>
+    <br>
+    <center>
+    <input type="text" autocomplete="off" id="Mensaje">
+    <button type="button" id="send">ENVIAR</button>
+    <div class="chatbox">
+      <p id="display"></p>
+    </div>    
+    <br>
+  </center>
+</div>
+</body>
 </html>
