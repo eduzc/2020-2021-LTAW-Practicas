@@ -1,11 +1,11 @@
 let insert = "Introduce tu nick!!"
-
+let bienvenida = "Bienvenido al chat de CHUCK NORRIS "
 
 function main() {
     // Introducción de nick en el navegador
     let username = prompt(insert);
-    window.alert("Bienvenido al chat de CHUCK NORRIS " + username + " !!");
-    console.log("Bienvenido al chat de CHUCK NORRIS") 
+    window.alert(bienvenida + username + " !!");
+    console.log(bienvenida) 
     
     // Definición de constantes
     // Websocket
