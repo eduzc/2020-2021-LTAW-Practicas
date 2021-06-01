@@ -1,11 +1,9 @@
-//Proceso de renderizado
 
 const electron = require('electron');
 
 
 console.log("Hola desde el index.js!!");
 
-//Obtenemos elementos de la interfaz
 const btn_test = document.getElementById("btn_test");
 const display = document.getElementById("display");
 const node_v = document.getElementById("node_v");
@@ -19,35 +17,14 @@ node_v.textContent = process.versions.node;
 chrome_v.textContent = process.versions.chrome;
 electron_v.textContent = process.versions.electron;
 
-//inicializamos el numero de usuarios para que se vaya actualizando
 let n_usuarios = 0;
 info_n_usuarios.innerHTML = n_usuarios;
 
-//Mensajes enviados al main
 btn_test.onclick = () => {
-    //Escribimos en el display un mensaje para todos los usuarios
     display.innerHTML +=  "PROBANDO" + '</p>';
     console.log("Botón apretado!");
 
-    //Enviamos mensaje al main
 };
 
-//ip
-electron.ipcRenderer.on('ip', (event, message) => {
-    console.log("Dirección ip: " + message);
-    direccion_ip.innerHTML = message;
-});
 
-//Número de usuarios
-electron.ipcRenderer.on('info_n_usuarios', (event, message) => {
-    console.log("Usuarios: " + message);
-    info_n_usuarios.innerHTML = message;
-});
-
-//Mensaje recibido de un cliente
-electron.ipcRenderer.on('print', (event, message) => {
-    console.log("Mensaje: " + message);
-    display.innerHTML += '<p>' + message + "</p>";
-    print.textContent = message;
-});
 
