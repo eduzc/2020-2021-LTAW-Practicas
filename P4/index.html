@@ -1,26 +1,16 @@
 <!DOCTYPE html>
-<html lang="es" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>MI CHAT</title>
-    <link rel="stylesheet" href="mycss.css">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:" />
+    <link rel="stylesheet" href="index.css">
 
-    <script src="app.js"></script>
-  </head>
-  <body onload="main();">
-    <div id ="chat">
-      <h3><center> MI CHAT</center></h3>
-      <br>
-      <li>Versión de Node: <span id="info1" class="blue"></span> </li>
-      <li>Versión de Electron: <span id="info2" class="blue"></span> </li>
-      <li>Versión de Chrome: <span id="info3" class="blue"></span> </li>
-      <h2>Dirección IP:</h2>
-      <p> <span id="info7"></span></p>
-      <input id="msg" autocomplete="off" value=""/>
-      <button type="button" id="send">Enviar</button>
-      <div class="chatbox">
-        <p id="display"></p>
-      </div>
-    </div> 
-  </body>
-</html>
+    <script src="index.js" defer></script>
+
+    <title> MI CHAT </title>
+
+</head>
+
