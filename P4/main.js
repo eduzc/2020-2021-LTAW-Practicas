@@ -86,7 +86,43 @@ io.on (connect, (socket) => {
         win.webContents.send('info_n_usuarios', n_usuarios);
     });
 
+// Definición de comandos de CHUCK NORRIS
+    socket.on("message", (msg) => {
+        if (msg.split(': ')[1].startsWith('/')) {
+            switch (msg.split(': ')[1]) {
+                case '/help':
+                    msg = 'Necesitas ayuda de CHUCK NORRIS?' + "<br>" +
+                    '/list : Devuelve el número de usuarios conectados' + "<br>" +
+                    '/hello : Devuelve un saludo de CHUCK NORRIS' + "<br>" +
+                    '/date : Devuelve la fecha actual';
+                    io.emit('message', msg);
+                    break;
+                case '/hello':
+                    msg = 'CHUCK_NORRIS: Bienvenido a mi chat ';
+                    io.emit('message', msg);
+                    break;
+                case '/date':
+                    let d = new Date();
+                    let yy = d.getFullYear();
+                    let mm = d.getMonth();
+                    let dd = d.getDate();
+                    msg = 'CHUCK NORRIS: ' + dd + '/' + mm + '/' + yy;
+                    io.emit('message', msg);
+                    break                  
+                case '/list':
+                    msg = 'Número de usuarios conectados: ' + n_usuarios ;
+                    io.emit('message', msg);
+                    break;
+                default:
 
+                    break;
+            }
+        } else {
+            console.log("Mensaje Recibido!: " + msg.red);
+            io.send(msg);
+            win.webContents.send('message', msg);
+        }
+    });
 });
 
 
