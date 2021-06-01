@@ -1,7 +1,7 @@
 const app = require("express")();
 const http = require("http").Server(app);
 const io = require("socket.io")(http);
-const PUERTO = 8000
+const PUERTO = 9000
 
 let n_usuarios = 0;
 let content;
