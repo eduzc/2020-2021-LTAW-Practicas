@@ -43,7 +43,7 @@ io.on('connection', function(socket){
       socket.emit('hello', "Tu nick es: " + username );
  
       // Detección de mensajes 
-      n_usuarioss += 1;
+      n_usuarios += 1;
       socket.on('new_message', msg => {
       //tututun.play();
  
