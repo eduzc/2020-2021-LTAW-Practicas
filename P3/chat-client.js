@@ -1,9 +1,13 @@
+let insert = "Introduce tu nick!!"
+
+
 function main() {
-    // Introducción
-    let username = prompt("Introduce tu nick!!");
+    // Introducción de nick en el navegador
+    let username = prompt(insert);
     window.alert("Bienvenido al chat de CHUCK NORRIS " + username + " !!");
     console.log("Bienvenido al chat de CHUCK NORRIS") 
     
+    // Definición de constantes
     // Websocket
     const display = document.getElementById("display");
     const msg = document.getElementById("msg");
@@ -21,7 +25,7 @@ function main() {
       msg.value="";
     }
    
-    // Mostrar mensaje del servidor.
+    // Mostrar mensajes
     socket.on('new_message', msg => {
       display.innerHTML += msg + '<br>';
     });
