@@ -14,3 +14,22 @@ h1{
 
 }
 
+h3{
+    margin: auto;
+    background-color: rgb(105, 197, 166);
+    height: 40px;
+    width: 100px;
+    text-decoration: underline;
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;    font-size: 15px;
+}
+.testeo{
+    margin-left: auto;
+    margin-right: auto;
+    color: black   ;
+    text-align: center;
+    width: 280px;
+    height: 100px;
+    font-size: 20px;
+    overflow-y: scroll;
+    border: 2px groove rgb(0, 102, 128);
+  }
