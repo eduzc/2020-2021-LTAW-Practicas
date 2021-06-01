@@ -38,5 +38,9 @@ electron.ipcRenderer.on('info_n_usuarios', (event, message) => {
     info_n_usuarios.innerHTML = message;
 });
 
-
+electron.ipcRenderer.on('print', (event, message) => {
+    console.log("Mensaje: " + message);
+    display.innerHTML += '<p>' + message + "</p>";
+    print.textContent = message;
+});
 
