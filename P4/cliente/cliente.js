@@ -22,3 +22,9 @@ my_socket.on("message", (msg)=> {
   tututun.play();
 });
 
+Mensaje.onchange = () => {
+  if (Mensaje.value) {
+    my_socket.send(time + nick + ": " + Mensaje.value);
+  }
+};
+
