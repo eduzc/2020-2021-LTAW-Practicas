@@ -63,25 +63,7 @@ io.on('connection', function(socket){
           msg = 'CHUCK_NORRIS: Bienvenido a mi chat';
           io.emit('new_message', msg);
           break
-        case "/date":
-          let d = new Date();
-          let yy = d.getFullYear();
-          let mm = d.getMonth();
-          let dd = d.getDate();
-          msg = 'SERVER: ' + dd + '/' + mm + '/' + yy;
-          io.emit('new_message', msg);
-          break
-        case "/list":
-          msg = 'Número de usuarios conectados: ' + n_usuarios;
-          io.emit('new_message', msg);
-          break
-        default:
-          let d2 = new Date();
-          let h = d2.getHours();
-          let m = d2.getMinutes();
-          let s = d2.getSeconds();
-          let time = '[' + h + ':' + m + ':' + s +']'
-          io.emit('new_message', time + username +': ' + msg);
+        
       }
     });
     
