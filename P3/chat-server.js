@@ -89,7 +89,9 @@ io.on('connection', function(socket){
     socket.on('disconnect', function(){
       io.emit('new_message',"El usuario " + username + " se ha desconectado!! ");
     
-
+    // Notificación por consola
+      console.log("El usuario " + username + ' se ha desconectado');
+      n_usuarios -= 1;
     });
   });
 });
