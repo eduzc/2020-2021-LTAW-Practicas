@@ -31,6 +31,6 @@ Mensaje.onchange = () => {
 
 msg_nick.onchange = () => {
   if (msg_nick.value){
-   
+    nick = msg_nick.value;
   }
 };
