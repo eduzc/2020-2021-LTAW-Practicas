@@ -1,0 +1,53 @@
+body {
+    background-image: url('https://img.europapress.es/fotoweb/fotonoticia_20150310130850-732359_420.jpg');
+    background-position: center;
+    background-attachment: fixed;
+
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;   
+    font-size: 30px;
+}
+
+h1{
+    text-align: center;
+    width: 1300px;
+    color:rgb(204, 27, 174);
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;    
+}
+
+#msg_nick{
+    text-align: center;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+#Mensaje{
+    text-align: center;
+    align-items: center;
+    padding: 10px 75px;
+}
+
+#display{
+    text-align: center;  
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;  
+    font-size: large;    
+}
+
+button {background-color: rgb(35, 68, 214);
+    font-family: Corporate A BQ ;border-radius: 4px;
+    color: white; text-align: center; display: inline-block;
+    cursor: pointer; box-shadow: 0 9px #999; width: 100px;
+    font-size: 13px;
+  
+    }
+button:hover {background-color: rgb(126, 120, 120);}
+button:active {background-color: white;  box-shadow: 0 5px #666;
+           transform: translateY(4px);}
+.chatbox{
+    background-color:#207183;
+    text-align: center;
+    width: 380px;
+    height: 400px;
+    font-size: 20px;
+    overflow-y: scroll;
+    border: 2px groove green;
+  }
