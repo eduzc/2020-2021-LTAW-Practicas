@@ -1,9 +1,8 @@
 h1{
     margin-top: 150px;
     text-align: center; 
-    font-family: Arial; 
-    font-size: 30px; 
-    COLOR: #152a3a; 
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;     font-size: 30px; 
+    color: #152a3a; 
     text-shadow: 0px 0px 9px #508AD3;
   }
   
@@ -37,7 +36,8 @@ h1{
     overflow-y: scroll;
     border: 2px groove green;
   }
-  button {background-color: rgb(35, 68, 214);font-family: Corporate A BQ ;border-radius: 4px;
+  button {background-color: rgb(35, 68, 214);font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif; 
+    border-radius: 4px;
     color: white; text-align: center; display: inline-block;
     cursor: pointer; box-shadow: 0 9px #999; width: 100px;
     padding: 5px 5px 5px 5px;
