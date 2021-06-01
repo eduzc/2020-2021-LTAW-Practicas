@@ -8,13 +8,18 @@ Utilizaremos node.js, tendremos que instalar los modulos
 * socket.io
 * colors
 * ip
+* electron
+index.html : aqui iniciamos electron.
+En main.js tenemos el archivo principal, mientras que en index.js tendremos el proceso de renderizado.
+
+Por otra parte he creado una carpeta donde esta la parte del cliente, de esta forma se nos facilitará la ejecución del programa, ya que en esta carpeta he incluido algunas mejoras.
 
 El fichero package.json nos da información de los paquetes instalados, asi como sus versiones.
 
 Lo primero es instalar los modulos en la carpeta que descargemos los ficheros, para ello usaremos npm install, posteriormente lo que he hecho es incluir la versión del navegador, node e ip del usuario a la que nos tenemos que conectar para poder acceder al chat.
 
 
-También he incluido un boton de testeo.
+También he incluido un boton de testeo en la pantalla inicial
 
 Para concectarnos al chat tendremos que abrir un navegador y poner localhost:9000.
 
