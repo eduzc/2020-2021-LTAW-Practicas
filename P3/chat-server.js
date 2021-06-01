@@ -71,10 +71,17 @@ io.on('connection', function(socket){
           msg = 'SERVER: ' + dd + '/' + mm + '/' + yy;
           io.emit('new_message', msg);
           break
+        case "/list":
+          msg = 'Número de usuarios conectados: ' + n_usuarios;
+          io.emit('new_message', msg);
+          break
         default:
-           break;
-
-        
+          let d2 = new Date();
+          let h = d2.getHours();
+          let m = d2.getMinutes();
+          let s = d2.getSeconds();
+          let time = '[' + h + ':' + m + ':' + s +']'
+          io.emit('new_message', time + username +': ' + msg);
       }
     });
     
