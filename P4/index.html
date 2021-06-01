@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>MI CHAT</title>
+    <link rel="stylesheet" href="mycss.css">
+
+    <script src="app.js"></script>
+  </head>
+  <body onload="main();">
+    <div id ="chat">
+      <h3><center> MI CHAT</center></h3>
+      <br>
+      <li>Versión de Node: <span id="info1" class="blue"></span> </li>
+      <li>Versión de Electron: <span id="info2" class="blue"></span> </li>
+      <li>Versión de Chrome: <span id="info3" class="blue"></span> </li>
+      <input id="msg" autocomplete="off" value=""/>
+      <button type="button" id="send">Enviar</button>
+      <div class="chatbox">
+        <p id="display"></p>
+      </div>
+    </div> 
+  </body>
+</html>

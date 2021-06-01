@@ -4,7 +4,6 @@ const io = require("socket.io")(http);
 const PUERTO = 9000
 
 let n_usuarios = 0;
-let content;
 
 // Lanzamos Server.
 http.listen(PUERTO, function(){
@@ -13,8 +12,7 @@ http.listen(PUERTO, function(){
 
 // NUEVA CONEXIÓN.
 io.on("connection", function(socket){
-  console.log("Nuevo usuario conectado!!");
-
+  // Generamos un nuevo nombre de usuario
   n_usuarios += 1;
   let random_number =  Math.floor((Math.random() * 100000) + 1);
   socket.id = "User_" + random_number
@@ -22,14 +20,9 @@ io.on("connection", function(socket){
   console.log("ID del usuario: " + socket.id)
   console.log("Número de usuarios en el chat: " + n_usuarios);
 
-  // Enviar mensaje de bienvenida al nuevo usuario
-  socket.emit("new_message", "Hola " + socket.id + ". Bienvenido a mi chat.</i>"); 
-
   // Anuncio del nuevo usuario
   io.emit("new_message", "El usuario " + socket.id + " se ha conectado al chat"); 
   console.log("Client: " + socket.id + " connected.")
-  io.emit('hello', "Tu nick es: " + socket.id );
-  
 
   //-- Detectar si se ha recibido un mensaje del cliente
   socket.on("new_message", msg => {
@@ -37,7 +30,7 @@ io.on("connection", function(socket){
     //-- Notificarlo en la consola del servidor
     console.log("Mensaje recibido " + msg)
 
-    // Definición de comandos
+    // Definición de comandos de CHUCK NORRIS
     switch (msg) {
       case "/help":
         msg = 'Necesitas ayuda de CHUCK NORRIS?' + "<br>" +
@@ -76,11 +69,12 @@ io.on("connection", function(socket){
 
 // Desconexión de usuario
   socket.on("disconnect", function(){
-  io.emit("new_message", "El usuario " + socket.id + " se ha desconectado"); 
+    io.emit("new_message", "El usuario " + socket.id + " se ha desconectado"); 
  
- // Notificación por consola
-  console.log("El usuario " + socket.id + ' se ha desconectado');
-  n_usuarios -= 1;
-  console.log("Número de usuarios en el chat: " + n_usuarios);
+  // Notificación por consola
+    console.log(" ");
+    console.log("El usuario " + socket.id + " se ha desconectado");
+    n_usuarios -= 1;
+    console.log("Número de usuarios en el chat: " + n_usuarios);
+    });
   });
-});
