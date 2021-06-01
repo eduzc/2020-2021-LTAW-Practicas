@@ -28,4 +28,9 @@ Mensaje.onchange = () => {
   }
   Mensaje.value = "";
 };
- 
+
+msg_nick.onchange = () => {
+  if (msg_nick.value){
+   
+  }
+};
