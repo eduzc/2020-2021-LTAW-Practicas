@@ -16,7 +16,7 @@ http.listen(PUERTO, function(){
 // Página del servidor
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
-  console.log("Página principal: /")
+  console.log("Cargando Página principal ...")
 });
  
 // Página del cliente
@@ -36,11 +36,15 @@ io.on('connection', function(socket){
  
   //  Detección de usuario nuevo
   socket.on('new_client', username =>{
+      // Mensajes
+      let nuevo_cliente = "El usuario " + username + " se ha conectado!! "
+      let adios_cliente = "El usuario " + username + " se ha desconectado!! "
+      let saludos = "Tu nick es: " + username
       // Notificación de que un usuario se ha conectado
-      io.emit('new_message',"El usuario " + username + " se ha conectado!! ");
-     //  Notificamos en consola el usuario conectado  
-      console.log("Client: " + username + " connected.")
-      socket.emit('hello', "Tu nick es: " + username );
+      io.emit('new_message', nuevo_cliente);
+      // Notificamos en consola el usuario conectado  
+      console.log(nuevo_cliente)
+      socket.emit('hello', saludos);
  
       // Detección de mensajes 
       n_usuarios += 1;
@@ -87,10 +91,9 @@ io.on('connection', function(socket){
     // Desconexión de usuario
 
     socket.on('disconnect', function(){
-      io.emit('new_message',"El usuario " + username + " se ha desconectado!! ");
-    
+      io.emit('new_message',adios_cliente);
     // Notificación por consola
-      console.log("El usuario " + username + ' se ha desconectado');
+      console.log(adios_cliente);
       n_usuarios -= 1;
     });
   });
