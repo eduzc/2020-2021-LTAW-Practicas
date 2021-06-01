@@ -5,9 +5,26 @@ const PUERTO = 9000
 
 let n_usuarios = 0;
 
+//const info7 = document.getElementById("info7");
+
+//const colors = require('colors');
+const ip = require('ip');
+infonode = process.versions.node;
+infochrome = process.versions.chrome;
+infoelectron = process.versions.electron;
+
 // Lanzamos Server.
 http.listen(PUERTO, function(){
-  console.log('Server lanzado en el puerto ' + PUERTO)
+console.log('Server lanzado en el puerto ' + PUERTO)
+let address = 'http://' + ip.address()+ ':'+ PUERTO + '/public_chat/index.html';
+console.log(address)
+console.log(infonode)
+console.log(infochrome)
+console.log(infoelectron)
+
+//info7.textContent = address;
+
+
 });
 
 // NUEVA CONEXIÓN.
