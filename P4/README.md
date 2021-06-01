@@ -6,12 +6,15 @@ Esta práctica es parecida a la anterior, sin embargo se nos pedirá realizar el
 Utilizaremos node.js, tendremos que instalar los modulos
 * express
 * socket.io
- 
+* colors
+* ip
+
+El fichero package.json nos da información de los paquetes instalados, asi como sus versiones.
+
 Lo primero es instalar los modulos en la carpeta que descargemos los ficheros, para ello usaremos npm install, posteriormente lo que he hecho es incluir la versión del navegador, node e ip del usuario a la que nos tenemos que conectar para poder acceder al chat.
 
-También he incluido un boton de testeo.
 
-Una vez
+También he incluido un boton de testeo.
 
 Para concectarnos al chat tendremos que abrir un navegador y poner localhost:9000.
 
@@ -25,6 +28,7 @@ Utilizaremos socket para activar los procesos de llamada, tambien lo usaremos pa
 ###  Mejoras
 Algunas de las mejoras que he implementado ha sido activar un audio cada vez que se manda un mensaje, 
 Otra mejora que he implementado ha sido el dar la hora cada vez que se envía y recibe un mensaje así como el poder usar nicknames.
+Importación de colores para los mensajes de consola
 
 
 
