@@ -10,7 +10,7 @@ let n_usuarios = 0;
 const app = express();
 const server = http.Server(app);
 // Definimos el puerto y la IP
-const PUERTO = 8080;
+const PUERTO = 9000;
 let end_address =  "/chat.html"
 let address = 'http://' + ip.address()+ ':'+ PUERTO + end_address;
 console.log(address)
