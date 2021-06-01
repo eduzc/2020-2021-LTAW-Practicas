@@ -1,12 +1,8 @@
-
 function main() {
-  let insert = "Introduce tu nick!!"
-  let bienvenida = "Bienvenido al chat de CHUCK NORRIS "
-  let conexion = "El usuario " + username + " se ha conectado"
     // Introducción de nick en el navegador
-    let username = prompt(insert);
-    window.alert(bienvenida + username + " !!");
-    console.log(bienvenida) 
+    let username = prompt("Introduce tu nick!!");
+    window.alert("Bienvenido al chat de CHUCK NORRIS " + username + " !!");
+    console.log("Bienvenido al chat de CHUCK NORRIS") 
     
     // Definición de constantes
     // Websocket
@@ -17,7 +13,7 @@ function main() {
    
     // Notificación de conexión de clientes por nombre de usuario
     socket.emit('new_client', username);
-    console.log(conexion);
+    console.log("El usuario " + username + " se ha conectado");
    
     // Envio de mensajes
     send.onclick = () => {
