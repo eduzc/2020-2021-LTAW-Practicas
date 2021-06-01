@@ -65,6 +65,31 @@ app.get('/', (req, res) => {
 });
 
 
+app.use('/', express.static(__dirname + '/'));
+
+app.use(express.static('public'));
+
+io.on (connect, (socket) => {
+    console.log (nueva_conexion.blue);
+    socket.send(bienvenida);
+
+    n_usuarios += 1;
+    win.webContents.send('info_n_usuarios', n_usuarios);
+
+
+    socket.on(disconnect, function(){
+        console.log('Fin de la conexion'.yellow);
+
+       io.send(desconexion);
+    
+        n_usuarios -= 1;
+        win.webContents.send('info_n_usuarios', n_usuarios);
+    });
+
+
+});
+
+
 
 
 
