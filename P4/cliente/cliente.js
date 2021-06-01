@@ -10,3 +10,9 @@ let tututun = new Audio('tututun.mp3');
 
 const my_socket = io();
 
+let d2 = new Date();
+let h = d2.getHours();
+let m = d2.getMinutes();
+let s = d2.getSeconds();  
+let time = '[' + h + ':' + m + ':' + s +']'
+
