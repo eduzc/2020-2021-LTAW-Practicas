@@ -16,3 +16,9 @@ let m = d2.getMinutes();
 let s = d2.getSeconds();  
 let time = '[' + h + ':' + m + ':' + s +']'
 
+
+my_socket.on("message", (msg)=> {
+  display.innerHTML += '<p style="color:black">' + msg + '</p>';
+  tututun.play();
+});
+
