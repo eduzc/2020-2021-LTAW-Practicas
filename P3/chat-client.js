@@ -1,7 +1,8 @@
-let insert = "Introduce tu nick!!"
-let bienvenida = "Bienvenido al chat de CHUCK NORRIS "
 
 function main() {
+  let insert = "Introduce tu nick!!"
+  let bienvenida = "Bienvenido al chat de CHUCK NORRIS "
+  let conexion = "El usuario " + username + " se ha conectado"
     // Introducción de nick en el navegador
     let username = prompt(insert);
     window.alert(bienvenida + username + " !!");
@@ -16,7 +17,7 @@ function main() {
    
     // Notificación de conexión de clientes por nombre de usuario
     socket.emit('new_client', username);
-    console.log("El usuario " + username + " se ha conectado");
+    console.log(conexion);
    
     // Envio de mensajes
     send.onclick = () => {
