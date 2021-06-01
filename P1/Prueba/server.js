@@ -30,8 +30,8 @@ http.createServer((req, res) => {
     //-- Fichero no encontrado. Devolver mensaje de error
     if (error) {
       res.writeHead(404, {'Content-Type': 'text/html'});
-      res.write("Error 404 Not Found");
-      return res.end();
+      console.log("ERROR!!")
+      petition = "error.html";
     }else{
 
     //-- Tipo mime por defecto: html
