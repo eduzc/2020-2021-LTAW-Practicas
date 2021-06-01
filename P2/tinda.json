@@ -15,42 +15,24 @@
     "productos": [
         {
             "nombre":"Guitarra 1",
-            "descripcion": "El guardian invisible",
-            "precio": "9.50",
+            "descripcion": "Electrica",
+            "precio": "1009.50",
             "stock":"4"
         },
         {
-            "nombre":"libro 2",
-            "descripcion": "Legado de huesos",
-            "precio": "9.50",
-            "stock":"4"
+            "nombre":"Guitarra 2",
+            "descripcion": "Acustica",
+            "precio": "100",
+            "stock":"1"
         },
         {
-            "nombre":"libro 3",
-            "descripcion": "Ofrenda a la tormenta",
-            "precio": "9.50",
+            "nombre":"Bajo ",
+            "descripcion": "Acustico",
+            "precio": "200",
             "stock":"3"
         }
 
-    ],
-    
-    "pedidos": [
-        {
-            "usuario":"carmeng",
-            "direccion": "madrid",
-            "tarjeta": "1234",
-            "productos": [{"libro1": 0,
-                            "libro2": 2,
-                            "libro3": 0
-            }]
-        },
-        {
-            "usuario":"root",
-            "direccion": "madrid",
-            "tarjeta": "4567",
-            "productos": [{"libro1": 0,
-                           "libro2": 0,
-                           "libro3": 1 }]
-        }
     ]
+    
+    
 }
