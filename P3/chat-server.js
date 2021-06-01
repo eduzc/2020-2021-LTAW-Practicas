@@ -63,6 +63,17 @@ io.on('connection', function(socket){
           msg = 'CHUCK_NORRIS: Bienvenido a mi chat';
           io.emit('new_message', msg);
           break
+        case "/date":
+          let d = new Date();
+          let yy = d.getFullYear();
+          let mm = d.getMonth();
+          let dd = d.getDate();
+          msg = 'SERVER: ' + dd + '/' + mm + '/' + yy;
+          io.emit('new_message', msg);
+          break
+        default:
+           break;
+
         
       }
     });
